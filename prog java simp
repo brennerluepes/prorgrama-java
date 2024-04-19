@@ -1,0 +1,36 @@
+public class ReajusteSalarioSimples {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        // Variáveis para armazenar os valores
+        double salario, aumento, novoSalario, aumentoReal;
+
+        // Obter o salário atual do colaborador
+        System.out.print("Informe o salário: R$ ");
+        salario = entrada.nextDouble();
+
+        // Calcular o aumento
+        if (salario <= 280) {
+            aumento = salario * 0.2;
+        } else if (salario <= 700) {
+            aumento = salario * 0.15;
+        } else if (salario <= 1500) {
+            aumento = salario * 0.1;
+        } else {
+            aumento = salario * 0.05;
+        }
+
+        // Calcular o novo salário
+        novoSalario = salario + aumento;
+
+        // Calcular o aumento real
+        aumentoReal = novoSalario * (1 - 0.038); // Inflação de 3.8%
+
+        // Apresentar os resultados na tela
+        System.out.println("\nSalário antes: R$ " + salario);
+        System.out.println("Aumento: R$ " + aumento);
+        System.out.println("Novo salário: R$ " + novoSalario);
+        System.out.println("Aumento real: R$ " + aumentoReal);
+    }
+}
